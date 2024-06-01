@@ -9,6 +9,7 @@ import {CategoryMealsComponent} from "./category-meals/category-meals.component"
 
 export const routes: Routes = [
   { path: 'recipes', component: RecipesComponent, canActivate: [AuthGuard] },
+  { path: '', component: RecipesComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'recipes/:id', component: RecipeDetailComponent , canActivate: [AuthGuard]},
   { path: 'categories', component: CategoriesComponent , canActivate: [AuthGuard]},

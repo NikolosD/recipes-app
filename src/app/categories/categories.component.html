@@ -5,15 +5,15 @@
         <div class="card-body">
           <h5 class="card-title">{{ category.strCategory }}</h5>
           <img [src]="category.strCategoryThumb" class="card-img-top" alt="{{ category.strCategory }}">
-
         </div>
       </div>
     </div>
   </div>
+  <app-pagination
+    [currentPage]="currentPage"
+    [totalPages]="totalPages"
+    (pageChange)="onPageChange($event)">
+  </app-pagination>
+
 </div>
 
-<div class="pagination">
-  <button class="page-link" *ngFor="let pageNumber of pagesArray" (click)="onPageChange(pageNumber)">
-    {{ pageNumber }}
-  </button>
-</div>

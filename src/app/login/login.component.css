@@ -1,6 +1,24 @@
+.container{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
 .loginContainer{
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+}
+
+.test-container{
+  color: grey;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.btn-primary{
+  margin-top: 20px;
+  width: 100%;
 }

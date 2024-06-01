@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {RouterModule} from "@angular/router";
 import {HeaderComponent} from "./header/header.component";
+import * as iso3166 from 'iso-3166-1-alpha-2';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +11,6 @@ import {HeaderComponent} from "./header/header.component";
   imports: [RouterModule, HeaderComponent]
 })
 export class AppComponent {
-  title = 'recipe-app';
+
+
 }

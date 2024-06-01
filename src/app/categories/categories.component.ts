@@ -2,18 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoriesService } from '../categories.service';
 import {NgForOf} from "@angular/common";
+import {PaginationComponent} from "../pagination/pagination.component";
 
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
   standalone: true,
   imports: [
-    NgForOf
+    NgForOf,
+    PaginationComponent
   ],
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-  categories: any[] = [];
+  categories: Category[] = [];
   currentPage: number = 1;
   itemsPerPage: number = 6;
   totalPages: number = 0;
@@ -57,3 +59,11 @@ export class CategoriesComponent implements OnInit {
     this.router.navigate(['/categories', pageNumber]);
   }
 }
+
+export type Category = {
+  idCategory: string;
+  strCategory: string;
+  strCategoryDescription: string;
+  strCategoryThumb: string;
+}
+

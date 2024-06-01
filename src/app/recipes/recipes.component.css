@@ -1,0 +1,10 @@
+.pagination{
+  padding: 20px;
+  justify-content: center;
+}
+
+.card-body{
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+}

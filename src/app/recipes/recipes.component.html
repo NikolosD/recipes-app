@@ -4,9 +4,9 @@
       <input type="text" class="form-control" [(ngModel)]="firstLetter" maxlength="1" placeholder="Enter first letter">
       <button class="btn btn-primary mt-2" (click)="getRecipesByFirstLetter()">Get Recipes</button>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-5">
       <input type="text" class="form-control" [(ngModel)]="searchQuery" placeholder="Search recipes">
-      <button class="btn btn-primary mt-2" (click)="searchRecipes()">Search</button>
+      <button class="btn btn-primary mt-2 me-5" (click)="searchRecipes()">Search</button>
       <button class="btn btn-secondary mt-2" (click)="resetFilters()">Reset Filters</button>
     </div>
   </div>
@@ -15,15 +15,23 @@
       <p>No recipes found.</p>
     </div>
     <ng-container *ngIf="recipes && recipes.length > 0">
-    <div *ngFor="let recipe of recipes"  class="col-md-4">
-      <div class="card mb-4">
-        <img [src]="recipe.strMealThumb" class="card-img-top" alt="{{ recipe.strMeal }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ recipe.strMeal }}</h5>
-          <a [routerLink]="['/recipes', recipe.idMeal]" class="btn btn-primary">View Recipe</a>
+      <div *ngFor="let recipe of getVisibleRecipes()" class="col-md-4">
+        <div class="card mb-lg-3">
+          <img [src]="recipe.strMealThumb" class="card-img-top" alt="{{ recipe.strMeal }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ recipe.strMeal }}</h5>
+            <h6 class="card-title">{{ recipe.strCategory }}</h6>
+            <h6 class="card-title">{{ recipe.strArea }}</h6>
+            <a [routerLink]="['/recipes', recipe.idMeal]" class="btn btn-primary">View Recipe</a>
+          </div>
         </div>
       </div>
-    </div>
-      </ng-container>
+
+    </ng-container>
+    <app-pagination
+      [currentPage]="currentPage"
+      [totalPages]="totalPages"
+      (pageChange)="onPageChange($event)">
+    </app-pagination>
   </div>
 </div>
