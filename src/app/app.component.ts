@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterModule} from "@angular/router";
+import {HeaderComponent} from "./header/header.component";
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [RouterModule, HeaderComponent]
 })
 export class AppComponent {
-  title = 'angularHW6';
+  title = 'recipe-app';
 }

@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Meals in {{ category }}</h2>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let meal of meals">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">{{ meal.strMeal }}</h5>
+          <img class="card-img-top" [src]="meal.strMealThumb" alt="Meal Image">
+          <a [routerLink]="['/recipes', meal.idMeal]" class="btn btn-primary">View Recipe</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

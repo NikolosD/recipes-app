@@ -1,0 +1,11 @@
+.pagination{
+  justify-content: center;
+}
+
+.card-body{
+  cursor:pointer;
+}
+
+.card-title{
+  text-align: center;
+}

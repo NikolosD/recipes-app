@@ -17,13 +17,13 @@ describe('AppComponent', () => {
   it(`should have the 'angularHW6' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angularHW6');
+    expect(app).toEqual('angularMealsReciept');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angularHW6');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angularMealsReciept');
   });
 });
