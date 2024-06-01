@@ -5,13 +5,14 @@ import {RecipeService} from '../recipe.service';
 import {PaginationComponent} from "../pagination/pagination.component";
 import {FormsModule} from "@angular/forms";
 import {LoaderService} from "../loader.service";
+import {RecipeCardComponent} from "../recipe-card/recipe-card.component";
 
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.css'],
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, PaginationComponent]
+  imports: [CommonModule, FormsModule, RouterLink, PaginationComponent, RecipeCardComponent]
 })
 
 

@@ -1,0 +1,9 @@
+<div class="card mb-lg-3">
+  <img [src]="recipe?.strMealThumb" class="card-img-top" [alt]="recipe?.strMeal">
+  <div class="card-body">
+    <h5 class="card-title">{{ recipe?.strMeal }}</h5>
+    <h6 class="card-title">{{ recipe?.strCategory }}</h6>
+    <h6 class="card-title">{{ recipe?.strArea }}</h6>
+    <a [routerLink]="['/recipes', recipe?.idMeal]" class="btn btn-primary">View Recipe</a>
+  </div>
+</div>
