@@ -58,6 +58,10 @@ export class CategoriesComponent implements OnInit {
   onPageChange(pageNumber: number): void {
     this.router.navigate(['/categories', pageNumber]);
   }
+
+  navigateToCategory(categoryName: string) {
+    this.router.navigate(['/category-meals', categoryName]);
+  }
 }
 
 export type Category = {
