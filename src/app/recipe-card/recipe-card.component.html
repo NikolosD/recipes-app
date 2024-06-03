@@ -5,10 +5,14 @@
     <button class="btn btn-link p-0" (click)="redirectToCategory(recipe?.strCategory)">
       <a class="link-primary">{{ recipe?.strCategory }}</a>
     </button>
-    <h6 class="card-title">{{ recipe?.strArea }}</h6>
+    <div class="meal-area-container">
+    <img *ngIf="getCountryIcon(recipe?.strArea)" [src]="getCountryIcon(recipe?.strArea)" alt="{{ recipe?.strArea }} icon" width="20" height="20">
+      <button class="btn btn-link p-0" (click)="redirectToAreaMeal(recipe?.strArea)">
+        <a class="link-primary">{{ recipe?.strArea }}</a>
+      </button>
+    </div>
     <button class="btn btn-link p-0" (click)="viewRecipe(recipe?.idMeal)">
-    <a class="btn btn-primary">View Recipe</a>
+      <a class="btn btn-primary">View Recipe</a>
     </button>
-
   </div>
 </div>

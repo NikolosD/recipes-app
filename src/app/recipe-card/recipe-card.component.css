@@ -1,0 +1,6 @@
+.meal-area-container{
+  display: flex;
+}
+.card-title{
+  margin-left: 5px;
+}
