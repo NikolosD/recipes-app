@@ -20,13 +20,12 @@ import {RecipeCardComponent} from "../recipe-card/recipe-card.component";
 export class RecipesComponent implements OnInit {
 
   recipes: Receipt[] = [];
-  firstLetter: string = 'a';
+  firstLetter: string = 'A';
   searchQuery: string = '';
   currentPage: number = 1;
   itemsPerPage: number = 6;
   totalPages: number = 0;
-
-
+  alphabet: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
   constructor(
     private recipeService: RecipeService,
     private router: Router,
@@ -37,9 +36,8 @@ export class RecipesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.route.queryParams.subscribe(params => {
-      this.firstLetter = params['firstLetter'] || 'a';
+      this.firstLetter = params['firstLetter'] || 'A';
       this.searchQuery = params['search'] || '';
       this.currentPage = +params['pageNumber'] || 1;
       this.loadRecipes();
@@ -56,6 +54,7 @@ export class RecipesComponent implements OnInit {
     }
   }
 
+
   getRecipesByFirstLetter(): void {
     this.loaderService.show();
     this.recipeService.getRecipesByFirstLetter(this.firstLetter).subscribe(data => {
@@ -66,14 +65,13 @@ export class RecipesComponent implements OnInit {
     this.loaderService.hide();
   }
 
+
   searchRecipes(): void {
     this.loaderService.show();
 
     this.recipeService.searchRecipes(this.searchQuery).subscribe(data => {
       this.recipes = data.meals || [];
       this.calculateTotalPages();
-
-
     });
     this.updateQueryParams();
     this.loaderService.hide();

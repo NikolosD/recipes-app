@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-recipe-card',
@@ -12,7 +12,18 @@ import {RouterLink} from "@angular/router";
 })
 export class RecipeCardComponent {
   @Input() recipe: Recipe | undefined;
+  constructor(private router: Router) {}
+
+  redirectToCategory(category: string | undefined): void {
+    this.router.navigate(['/category-meals', category]);
+  }
+
+  viewRecipe(recipeId: string | undefined): void {
+    this.router.navigate(['/recipes', recipeId]);
+  }
 }
+
+
 
 export interface Recipe {
   idMeal: string;

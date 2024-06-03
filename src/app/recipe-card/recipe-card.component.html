@@ -2,8 +2,14 @@
   <img [src]="recipe?.strMealThumb" class="card-img-top" [alt]="recipe?.strMeal">
   <div class="card-body">
     <h5 class="card-title">{{ recipe?.strMeal }}</h5>
-    <h6 class="card-title">{{ recipe?.strCategory }}</h6>
+    <button class="btn btn-link p-0" (click)="redirectToCategory(recipe?.strCategory)">
+      <a class="link-primary">{{ recipe?.strCategory }}</a>
+    </button>
     <h6 class="card-title">{{ recipe?.strArea }}</h6>
-    <a [routerLink]="['/recipes', recipe?.idMeal]" class="btn btn-primary">View Recipe</a>
+    <button class="btn btn-link p-0" (click)="viewRecipe(recipe?.idMeal)">
+
+    <a class="btn btn-primary">View Recipe</a>
+    </button>
+
   </div>
 </div>

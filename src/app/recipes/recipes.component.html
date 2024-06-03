@@ -1,8 +1,11 @@
 <div class="container mt-3">
   <div class="row">
+    <div class="select-header">Select first letter</div>
     <div class="col-md-4">
-      <input type="text" class="form-control" [(ngModel)]="firstLetter" maxlength="1" placeholder="Enter first letter">
-      <button class="btn btn-primary mt-2" (click)="getRecipesByFirstLetter()">Get Recipes</button>
+      <select class="form-control" [(ngModel)]="firstLetter" (change)="getRecipesByFirstLetter()" [value]="firstLetter">
+        <option value="" disabled selected>Select first letter </option>
+        <option *ngFor="let letter of alphabet" >{{letter}}</option>
+      </select>
     </div>
     <div class="col-md-5">
       <input type="text" class="form-control" [(ngModel)]="searchQuery" placeholder="Search recipes">

@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4" *ngFor="let category of getVisibleCategories()">
-      <div class="card mb-4" (click)="navigateToCategory(category.strCategory)">
-        <div class="card-body">
+    <div class="col-md-4" role="button" *ngFor="let category of getVisibleCategories()">
+      <button class="card mb-4" (click)="navigateToCategory(category.strCategory)" type="button">
+        <div>
           <h5 class="card-title">{{ category.strCategory }}</h5>
           <img [src]="category.strCategoryThumb" class="card-img-top" alt="{{ category.strCategory }}">
         </div>
-      </div>
+      </button>
     </div>
   </div>
   <app-pagination

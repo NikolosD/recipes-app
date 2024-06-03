@@ -2,10 +2,9 @@
   justify-content: center;
 }
 
-.card-body{
-  cursor:pointer;
-}
 
-.card-title{
-  text-align: center;
+
+
+.container{
+  margin-top: 50px;
 }
