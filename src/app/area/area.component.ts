@@ -50,7 +50,7 @@ export class AreaComponent {
     this.pagesArray = Array.from({ length: this.totalPages }, (_, i) => i + 1);
   }
 
-  navigateToAreaMeals() {
-    this.router.navigate(['/area/:country']);
+  navigateToAreaMeals(countryName: string) {
+    this.router.navigate(['/area', countryName]);
   }
 }

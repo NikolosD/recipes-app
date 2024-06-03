@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class AreaService {
   constructor(private http: HttpClient) {}
 
-  getMealsByArea(area: string): Observable<any> {
+  getMealsByArea(area: string | undefined): Observable<any> {
     return this.http.get(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`);
   }
 }

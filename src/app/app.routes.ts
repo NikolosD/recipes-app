@@ -18,7 +18,7 @@ export const routes: Routes = [
   { path: 'categories/:pageNumber', component: CategoriesComponent,canActivate: [AuthGuard] },
   { path: 'category-meals/:category', component: CategoryMealsComponent,canActivate: [AuthGuard] },
   { path: 'area', component: AreaComponent,canActivate: [AuthGuard]},
-  { path: 'area/:country', component: AreaMealsComponent,canActivate: [AuthGuard]},
+  { path: 'area/:country', component: AreaMealsComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
