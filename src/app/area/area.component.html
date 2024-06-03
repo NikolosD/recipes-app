@@ -1,0 +1,24 @@
+<div>
+  <h2 class="mb-4 text-center mt-4">List of Countries</h2>
+  <div class="container">
+
+    <div class="row">
+      <div *ngFor="let country of getVisibleCountries()" class="col-md-4 mb-4">
+        <button class="area-link" (click)="navigateToAreaMeals()">
+          <div class="card">
+            <img class="card-img" src="assets/flags/{{country.icon}}" alt="{{ country.name }} icon" width="64" height="170">
+            <div class="card-body">
+              <h5 class="card-title">{{ country.name }}</h5>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <app-pagination
+      [currentPage]="currentPage"
+      [totalPages]="totalPages"
+      (pageChange)="onPageChange($event)">
+    </app-pagination>
+  </div>
+</div>

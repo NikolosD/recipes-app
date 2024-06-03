@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CategoriesService } from '../categories.service';
+import { CategoriesService } from '../services/categories/categories.service';
 import {NgForOf} from "@angular/common";
 import {PaginationComponent} from "../pagination/pagination.component";
 

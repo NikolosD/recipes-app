@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MealsService } from '../meals.service';
+import { MealsService } from '../services/meals/meals.service';
 import { NgForOf } from "@angular/common";
 import { RecipeCardComponent } from "../recipe-card/recipe-card.component";
 import { PaginationComponent } from "../pagination/pagination.component";

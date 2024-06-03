@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute, RouterLink} from '@angular/router';
 import {CommonModule} from '@angular/common';
-import {RecipeService} from '../recipe.service';
+import {RecipeService} from '../services/recipe/recipe.service';
 import {PaginationComponent} from "../pagination/pagination.component";
 import {FormsModule} from "@angular/forms";
-import {LoaderService} from "../loader.service";
+import {LoaderService} from "../services/loader/loader.service";
 import {RecipeCardComponent} from "../recipe-card/recipe-card.component";
 
 @Component({

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {RecipeService} from '../recipe.service';
+import {RecipeService} from '../services/recipe/recipe.service';
 import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
